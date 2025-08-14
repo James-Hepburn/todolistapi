@@ -6,7 +6,6 @@ import lombok.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class Todo {
     @Id
@@ -19,4 +18,9 @@ public class Todo {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    public Todo (String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
 }
